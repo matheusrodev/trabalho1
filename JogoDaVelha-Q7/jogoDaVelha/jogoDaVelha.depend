@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1548348495 source:c:\users\matheus\documents\jogodavelha\main.c
+	<stdio.h>
+	<string.h>
+
