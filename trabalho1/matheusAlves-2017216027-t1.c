@@ -1,23 +1,23 @@
 // #################################################
 //  Instituto Federal da Bahia
 //  Salvador - BA
-//  Curso de Análise e Desenvolvimento de Sistemas http://ads.ifba.edu.br
-//  Disciplina: INF029 - Laboratório de Programação
+//  Curso de AnÃ¡lise e Desenvolvimento de Sistemas http://ads.ifba.edu.br
+//  Disciplina: INF029 - LaboratÃ³rio de ProgramaÃ§Ã£o
 //  Professor: Renato Novais - renato@ifba.edu.br
 
-//  ----- Orientações gerais -----
-//  Descrição: esse arquivo deve conter as questões do trabalho do aluno.
+//  ----- OrientaÃ§Ãµes gerais -----
+//  DescriÃ§Ã£o: esse arquivo deve conter as questÃµes do trabalho do aluno.
 //  Cada aluno deve renomear esse arquivo para Aluno<MATRICULA>.c
-//  O aluno deve preencher seus dados abaixo, e implementar as questões do trabalho
+//  O aluno deve preencher seus dados abaixo, e implementar as questÃµes do trabalho
 
 //  ----- Dados do Aluno -----
 //  Nome: Matheus Alves Rodrigues
 //  email: mr634580@gmail.com
-//  Matrícula: 2017216027
+//  MatrÃ­cula: 2017216027
 //  Semestre: 2
 
-//  Copyright © 2016 Renato Novais. All rights reserved.
-// Última atualização: 20/06/2018 - 19/08/2016
+//  Copyright Â© 2016 Renato Novais. All rights reserved.
+// Ãšltima atualizaÃ§Ã£o: 20/06/2018 - 19/08/2016
 
 // #################################################
 
@@ -33,7 +33,7 @@ struct DATA{
 };
 typedef struct DATA dma;
 /*
-## função utilizada para testes  ##
+## funÃ§Ã£o utilizada para testes  ##
  somar = somar dois valores
 @objetivo
     Somar dois valores x e y e retonar o resultado da soma
@@ -49,16 +49,16 @@ int somar(int x, int y){
 }
 
 /*
-## função utilizada para testes  ##
- fatorial = fatorial de um número
+## funÃ§Ã£o utilizada para testes  ##
+ fatorial = fatorial de um nÃºmero
 @objetivo
-    calcular o fatorial de um número
+    calcular o fatorial de um nÃºmero
 @entrada
     um inteiro x
 @saida
     fatorial de x -> x!
  */
-int fatorial(int x){ //função utilizada para testes
+int fatorial(int x){ //funÃ§Ã£o utilizada para testes
   if(x==0)
 	return 1;
   else
@@ -89,7 +89,7 @@ void DataConverter(char *data, int *dia, int *mes, int *ano){
           break;
         }
 
-        string[cont] = '\0'; //?para não pegar lixo
+        string[cont] = '\0'; //?para nÃ£o pegar lixo
 
         if(j == 0 && cont <= 2) //?cont <= 2 para limitar a quantidade de casas
             *dia = atoi(string);
@@ -110,10 +110,10 @@ void DataConverter(char *data, int *dia, int *mes, int *ano){
 @objetivo
     Validar uma data
 @entrada
-    uma string data. Formatos que devem ser aceitos: dd/mm/aaaa, onde dd = dia, mm = mês, e aaaa, igual ao ano. dd em mm podem ter apenas um digito, e aaaa podem ter apenas dois digitos.
+    uma string data. Formatos que devem ser aceitos: dd/mm/aaaa, onde dd = dia, mm = mÃªs, e aaaa, igual ao ano. dd em mm podem ter apenas um digito, e aaaa podem ter apenas dois digitos.
 @saida
-    0 -> se data inválida
-    1 -> se data válida
+    0 -> se data invÃ¡lida
+    1 -> se data vÃ¡lida
  */
 int q1(char *data){
     int i, j, cont, k;
@@ -166,15 +166,15 @@ int q1(char *data){
 
 }
 /*
- Q2 = diferença entre duas datas
+ Q2 = diferenÃ§a entre duas datas
  @objetivo
-    Calcular a diferença em anos, meses e dias entre duas datas
+    Calcular a diferenÃ§a em anos, meses e dias entre duas datas
  @entrada
-    uma string datainicial, uma string datafinal. Além disso, a função tem três parâmetros qtdDias, qtdMeses e qtdAnos. Esses três parâmetros devem ser utilizados para guardar os resultados dos cálculos. Na chamada da função deve passar o valor -1 para os três
+    uma string datainicial, uma string datafinal. AlÃ©m disso, a funÃ§Ã£o tem trÃªs parÃ¢metros qtdDias, qtdMeses e qtdAnos. Esses trÃªs parÃ¢metros devem ser utilizados para guardar os resultados dos cÃ¡lculos. Na chamada da funÃ§Ã£o deve passar o valor -1 para os trÃªs
  @saida
-    1 -> cálculo de diferença realizado com sucesso
-    2 -> datainicial inválida
-    3 -> datafinal inválida
+    1 -> cÃ¡lculo de diferenÃ§a realizado com sucesso
+    2 -> datainicial invÃ¡lida
+    3 -> datafinal invÃ¡lida
     4 -> datainicial > datafinal
  */
 int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtdAnos){
@@ -220,24 +220,35 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
             if(finalDia < inicioDia){
                 dias = inicioDia - finalDia;
                 meses = meses -1;
-                if(((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) && (finalAno % 400 == 0 || (inicioAno % 4 == 0 && inicioAno % 100 != 0))) || ((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) && (finalAno % 400 != 0 || (finalAno % 4 != 0 && finalAno % 100 == 0)))){
+                if(((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) 
+		    && (finalAno % 400 == 0 || (inicioAno % 4 == 0 && inicioAno % 100 != 0))) 
+		   || ((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) 
+		       && (finalAno % 400 != 0 || (finalAno % 4 != 0 && finalAno % 100 == 0)))){
                     if((finalMes == 2) || (inicioMes == 2)){
                         dias = 29 - dias;
                     } else
-                        if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
+                        if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) 
+			   || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
                             dias = 30 - dias;
                         } else
-                            if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 || finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 || inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
+                            if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 
+				|| finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 
+				|| inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
                                 dias = 31 - dias;
                             }
                 } else{
                     if((finalMes == 2) || (inicioMes == 2)){
                         dias = 28 - dias;
                     } else
-                        if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
+                        if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) 
+			   || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
                             dias = 30 - dias;
                         } else
-                            if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 || finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 || inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){                            nDias = 31 - nDias;
+                            if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 
+				|| finalMes == 8 || finalMes == 10 || finalMes == 12) || (inicioMes == 1 
+				|| inicioMes == 3 || inicioMes == 5 || inicioMes == 7 || inicioMes == 8 
+				|| inicioMes == 10 || inicioMes == 12)){                            
+				    nDias = 31 - nDias;
                             }
                 }
             }
@@ -253,17 +264,23 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
                 if(finalDia < inicioDia){
                     dias = inicioDia - finalDia;
                     meses = meses -1;
-                    if(((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) && (inicioAno % 400 == 0 || (inicioAno % 4 == 0 && inicioAno % 100 != 0))) || ((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) && (inicioAno % 400 != 0 || (inicioAno % 4 != 0 && inicioAno % 100 == 0)))){
+                    if(((finalAno % 400 == 0 || (finalAno % 4 == 0 && finalAno % 100 != 0)) && (inicioAno % 400 == 0 
+			|| (inicioAno % 4 == 0 && inicioAno % 100 != 0))) || ((finalAno % 400 == 0 
+			|| (finalAno % 4 == 0 && finalAno % 100 != 0)) && (inicioAno % 400 != 0 
+			|| (inicioAno % 4 != 0 && inicioAno % 100 == 0)))){
                         if((finalMes == 2) || (inicioMes == 2)){
                             dias = 29 - dias;
                         } else
 
-                        if((((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || finalMes == 11)) || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
+                        if((((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || finalMes == 11)) 
+			   || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
                             dias = 30 - dias;
                         } else
 
-                        if((finalMes == 1 || finalMes== 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 || finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 || inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
-                            dias = 31 - dias;
+                        if((finalMes == 1 || finalMes== 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 
+			    	|| finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 || inicioMes == 5 
+				|| inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
+                            	dias = 31 - dias;
                         }
                     }
                 else{
@@ -271,11 +288,14 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
                         dias = 28 - dias;
                     } else
 
-                    if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) || ((inicioMes == 4) || (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
+                    if(((finalMes == 4) || (finalMes == 6) || (finalMes == 9) || (finalMes == 11)) || ((inicioMes == 4) 
+			|| (inicioMes == 6) || (inicioMes == 9) || (inicioMes == 11))){
                         dias = 30 - dias;
                     } else
 
-                    if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 || finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 || inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
+                    if((finalMes == 1 || finalMes == 3 || finalMes == 5 || finalMes == 7 || finalMes == 8 
+			|| finalMes == 10 || finalMes == 12) || (inicioMes == 1 || inicioMes == 3 
+			|| inicioMes == 5 || inicioMes == 7 || inicioMes == 8 || inicioMes == 10 || inicioMes == 12)){
                         dias = 31 - dias;
                     }
                 }
@@ -299,10 +319,10 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
  @objetivo
     Pesquisar quantas vezes um determinado caracter ocorre em um texto
  @entrada
-    uma string texto, um caracter c e um inteiro que informa se é uma pesquisa Case Sensitive ou não. Se isCaseSensitive = 1, a pesquisa deve considerar diferências entre maiúsculos e minúsculos.
-        Se isCaseSensitive != 1, a pesquisa não deve  considerar diferências entre maiúsculos e minúsculos.
+    uma string texto, um caracter c e um inteiro que informa se Ã© uma pesquisa Case Sensitive ou nÃ£o. Se isCaseSensitive = 1, a pesquisa deve considerar diferÃªncias entre maiÃºsculos e minÃºsculos.
+        Se isCaseSensitive != 1, a pesquisa nÃ£o deve  considerar diferÃªncias entre maiÃºsculos e minÃºsculos.
  @saida
-    Um número n >= 0.
+    Um nÃºmero n >= 0.
 */
 int q3(char *texto, char c, int isCaseSensitive){
     int i, qtdOcorrencias = 0;
@@ -325,16 +345,16 @@ int q3(char *texto, char c, int isCaseSensitive){
 }
 /*Q4 = encontrar palavra em texto
  @objetivo
-    Pesquisar todas as ocorrências de uma palavra em um texto
+    Pesquisar todas as ocorrÃªncias de uma palavra em um texto
  @entrada
-    uma string texto base (strTexto), uma string strBusca e um vetor de inteiros (posicoes) que irá guardar as posições de início e fim de cada ocorrência da palavra (strBusca) no texto base (texto).
+    uma string texto base (strTexto), uma string strBusca e um vetor de inteiros (posicoes) que irÃ¡ guardar as posiÃ§Ãµes de inÃ­cio e fim de cada ocorrÃªncia da palavra (strBusca) no texto base (texto).
  @saida
-    Um número n >= 0 correspondente a quantidade de ocorrências encontradas.
-    O vetor posicoes deve ser preenchido com cada entrada e saída correspondente. Por exemplo, se tiver uma única ocorrência, a posição 0 do vetor deve ser preenchido com o índice de início do texto, e na posição 1, deve ser preenchido com o índice de fim da ocorrencias. Se tiver duas ocorrências, a segunda ocorrência será amazenado nas posições 2 e 3, e assim consecutivamente. Suponha a string "Instituto Federal da Bahia", e palavra de busca "dera". Como há uma ocorrência da palavra de busca no texto, deve-se armazenar no vetor, da seguinte forma:
+    Um nÃºmero n >= 0 correspondente a quantidade de ocorrÃªncias encontradas.
+    O vetor posicoes deve ser preenchido com cada entrada e saÃ­da correspondente. Por exemplo, se tiver uma Ãºnica ocorrÃªncia, a posiÃ§Ã£o 0 do vetor deve ser preenchido com o Ã­ndice de inÃ­cio do texto, e na posiÃ§Ã£o 1, deve ser preenchido com o Ã­ndice de fim da ocorrencias. Se tiver duas ocorrÃªncias, a segunda ocorrÃªncia serÃ¡ amazenado nas posiÃ§Ãµes 2 e 3, e assim consecutivamente. Suponha a string "Instituto Federal da Bahia", e palavra de busca "dera". Como hÃ¡ uma ocorrÃªncia da palavra de busca no texto, deve-se armazenar no vetor, da seguinte forma:
         posicoes[0] = 13;
         posicoes[1] = 16;
-        Observe que o índice da posição no texto deve começar ser contado a partir de 1.
-        O retorno da função, n, nesse caso seria 1;
+        Observe que o Ã­ndice da posiÃ§Ã£o no texto deve comeÃ§ar ser contado a partir de 1.
+        O retorno da funÃ§Ã£o, n, nesse caso seria 1;
  */
 int q4(char *strTexto, char *strBusca, int posicoes[30]){
 
@@ -369,13 +389,13 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]){
 }
 
 /*
- Q5 = inverte número
+ Q5 = inverte nÃºmero
  @objetivo
-    Inverter número inteiro
+    Inverter nÃºmero inteiro
  @entrada
     uma int num.
  @saida
-    Número invertido
+    NÃºmero invertido
 */
 
 
@@ -392,13 +412,13 @@ int q5(int num){
     return valorInvertido;
 }
 
-/*Q6 = ocorrência de um número em outro
+/*Q6 = ocorrÃªncia de um nÃºmero em outro
  @objetivo
-    Verificar quantidade de vezes da ocorrência de um número em outro
+    Verificar quantidade de vezes da ocorrÃªncia de um nÃºmero em outro
  @entrada
-    Um número base (numerobase) e um número de busca (numerobusca).
+    Um nÃºmero base (numerobase) e um nÃºmero de busca (numerobusca).
  @saida
-    Quantidade de vezes que número de busca ocorre em número base
+    Quantidade de vezes que nÃºmero de busca ocorre em nÃºmero base
  */
 
 int q6(int numerobase, int numerobusca){
